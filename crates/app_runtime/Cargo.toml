@@ -1,0 +1,11 @@
+[package]
+name = "fusion-cut-app-runtime"
+version = "0.1.0"
+edition.workspace = true
+
+[dependencies]
+gpui = { workspace = true }
+gpui-component = { workspace = true }
+anyhow = { workspace = true }
+
+fusion-cut-ui = { workspace = true }

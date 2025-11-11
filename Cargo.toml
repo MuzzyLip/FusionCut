@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = [
+    # Apps
+    "apps/editor",
+    # Crates
+    "crates/ui",
+    "crates/app_runtime",
+]
+
+[workspace.package]
+publish = false
+edition = "2024"
+
+[workspace.dependencies]
+#
+# Third-party Crates
+#
+gpui = { version = "*" }
+gpui-component = { version = "*" }
+anyhow = "1.0"
+#
+# Workspace member Crates
+#
+fusion-cut-ui = { path = "crates/ui" }
+fusion-cut-app-runtime = { path = "crates/app_runtime" }
