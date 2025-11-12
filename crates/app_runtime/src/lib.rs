@@ -1,4 +1,5 @@
 // Responsible for application lifecycle, window management, etc.
+mod assets;
 mod option;
 mod windows;
 

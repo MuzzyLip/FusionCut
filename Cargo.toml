@@ -18,7 +18,7 @@ edition = "2024"
 # Third-party Crates
 #
 gpui = { version = "*" }
-gpui-component = { version = "*" }
+gpui-component = { version = "0.4.0-preview2" }
 anyhow = "1.0"
 serde = "1.0"
 locale_config = "0.3"

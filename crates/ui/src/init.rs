@@ -2,8 +2,12 @@ use fusion_cut_core::app_state::AppState;
 use gpui::{App, IntoElement, ParentElement, Render, Styled, div, rgb};
 use gpui_component::StyledExt;
 
-use crate::theme::{BACKGROUND, TEXT_COLOR};
+use crate::{
+    pages::edit_page::EditPage,
+    theme::{BACKGROUND, TEXT_COLOR},
+};
 
+// Init GPUI Component
 pub fn init_gpui_component(cx: &mut App) {
     gpui_component::init(cx)
 }
@@ -18,11 +22,11 @@ impl RootApp {
 impl Render for RootApp {
     fn render(
         &mut self,
-        _window: &mut gpui::Window,
+        window: &mut gpui::Window,
         cx: &mut gpui::Context<Self>,
     ) -> impl IntoElement {
         let global: &AppState = cx.global();
-        let i18n = global.i18n.clone();
+        let _i18n = global.i18n.clone();
         div()
             .v_flex()
             .size_full()
@@ -30,6 +34,6 @@ impl Render for RootApp {
             .items_center()
             .bg(rgb(BACKGROUND))
             .text_color(rgb(TEXT_COLOR))
-            .child(format!("{} {}", i18n.t("app.welcome"), i18n.t("app.name")))
+            .child(EditPage::view(window, cx))
     }
 }

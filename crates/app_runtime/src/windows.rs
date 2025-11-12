@@ -3,7 +3,7 @@ use fusion_cut_ui::{RootApp, init_gpui_component};
 use gpui::{AppContext, Application, Pixels, Size, px, size};
 use gpui_component::Root;
 
-use crate::option::DefaultWindowOptions;
+use crate::{assets::Assets, option::DefaultWindowOptions};
 
 #[derive(Clone, Copy, Debug)]
 pub enum WindowsName {
@@ -19,7 +19,7 @@ impl WindowsName {
 }
 
 pub fn create_gpui_window() {
-    let app = Application::new();
+    let app = Application::new().with_assets(Assets);
     app.run(move |cx| {
         init_gpui_component(cx);
         let options = DefaultWindowOptions::build(WindowsName::Main, cx);

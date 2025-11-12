@@ -15,6 +15,7 @@ impl Language {
         }
     }
 
+    #[allow(clippy::if_same_then_else)]
     pub fn from(locale: Locale) -> Self {
         let lang_code = locale.to_string().to_lowercase();
         if lang_code.starts_with("zh-cn") {
@@ -63,5 +64,11 @@ impl I18n {
             .unwrap_or_else(|_| panic!("Missing translation file: {}", file));
 
         toml::from_str(&content).expect("Invalid TOML format")
+    }
+}
+
+impl Default for I18n {
+    fn default() -> Self {
+        Self::new()
     }
 }
