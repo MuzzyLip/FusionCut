@@ -1,10 +1,10 @@
 [package]
-name = "fusion-cut-ui"
+name = "fusion-cut-core"
 version = "0.1.0"
 edition.workspace = true
 
 [dependencies]
 gpui = { workspace = true }
-gpui-component = { workspace = true }
 
-fusion-cut-core = { workspace = true }
+toml = { workspace = true }
+locale_config = { workspace = true }

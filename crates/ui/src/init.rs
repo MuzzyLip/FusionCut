@@ -1,7 +1,8 @@
+use fusion_cut_core::app_state::AppState;
 use gpui::{App, IntoElement, ParentElement, Render, Styled, div, rgb};
 use gpui_component::StyledExt;
 
-use crate::theme::BACKGROUND;
+use crate::theme::{BACKGROUND, TEXT_COLOR};
 
 pub fn init_gpui_component(cx: &mut App) {
     gpui_component::init(cx)
@@ -18,14 +19,17 @@ impl Render for RootApp {
     fn render(
         &mut self,
         _window: &mut gpui::Window,
-        _cx: &mut gpui::Context<Self>,
+        cx: &mut gpui::Context<Self>,
     ) -> impl IntoElement {
+        let global: &AppState = cx.global();
+        let i18n = global.i18n.clone();
         div()
             .v_flex()
             .size_full()
             .justify_center()
             .items_center()
             .bg(rgb(BACKGROUND))
-            .child("Hello FusionCut")
+            .text_color(rgb(TEXT_COLOR))
+            .child(format!("{} {}", i18n.t("app.welcome"), i18n.t("app.name")))
     }
 }

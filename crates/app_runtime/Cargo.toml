@@ -9,3 +9,4 @@ gpui-component = { workspace = true }
 anyhow = { workspace = true }
 
 fusion-cut-ui = { workspace = true }
+fusion-cut-core = { workspace = true }

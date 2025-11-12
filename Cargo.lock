@@ -1789,9 +1789,19 @@ name = "fusion-cut-app-runtime"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "fusion-cut-core",
  "fusion-cut-ui",
  "gpui",
  "gpui-component",
+]
+
+[[package]]
+name = "fusion-cut-core"
+version = "0.1.0"
+dependencies = [
+ "gpui",
+ "locale_config",
+ "toml 0.9.8",
 ]
 
 [[package]]
@@ -1805,6 +1815,7 @@ dependencies = [
 name = "fusion-cut-ui"
 version = "0.1.0"
 dependencies = [
+ "fusion-cut-core",
  "gpui",
  "gpui-component",
 ]
@@ -3124,6 +3135,19 @@ name = "litemap"
 version = "0.8.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6373607a59f0be73a39b6fe456b8192fcc3585f602af20751600e974dd455e77"
+
+[[package]]
+name = "locale_config"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08d2c35b16f4483f6c26f0e4e9550717a2f6575bcd6f12a53ff0c490a94a6934"
+dependencies = [
+ "lazy_static",
+ "objc",
+ "objc-foundation",
+ "regex",
+ "winapi",
+]
 
 [[package]]
 name = "lock_api"

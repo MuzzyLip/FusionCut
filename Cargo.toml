@@ -6,6 +6,7 @@ members = [
     # Crates
     "crates/ui",
     "crates/app_runtime",
+    "crates/core",
 ]
 
 [workspace.package]
@@ -19,8 +20,12 @@ edition = "2024"
 gpui = { version = "*" }
 gpui-component = { version = "*" }
 anyhow = "1.0"
+serde = "1.0"
+locale_config = "0.3"
+toml = "0.9.8"
 #
 # Workspace member Crates
 #
 fusion-cut-ui = { path = "crates/ui" }
 fusion-cut-app-runtime = { path = "crates/app_runtime" }
+fusion-cut-core = { path = "crates/core" }

@@ -1,4 +1,4 @@
-// Responsible for application lifecycle, window management, global state, etc.
+// Responsible for application lifecycle, window management, etc.
 mod option;
 mod windows;
 
