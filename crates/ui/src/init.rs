@@ -1,6 +1,7 @@
 use fusion_cut_core::app_state::AppState;
 use gpui::{App, IntoElement, ParentElement, Render, Styled, div, rgb};
-use gpui_component::StyledExt;
+use gpui_component::{StyledExt, Theme, ThemeRegistry};
+use std::path::PathBuf;
 
 use crate::{
     pages::edit_page::EditPage,
@@ -9,7 +10,14 @@ use crate::{
 
 // Init GPUI Component
 pub fn init_gpui_component(cx: &mut App) {
-    gpui_component::init(cx)
+    gpui_component::init(cx);
+    if let Err(err) = ThemeRegistry::watch_dir(PathBuf::from("./themes"), cx, move |cx| {
+        if let Some(theme) = ThemeRegistry::global(cx).themes().get("Ayu Dark").cloned() {
+            Theme::global_mut(cx).apply_config(&theme);
+        }
+    }) {
+        eprintln!("Failed to watch themes directory: {}", err);
+    }
 }
 
 // Root App

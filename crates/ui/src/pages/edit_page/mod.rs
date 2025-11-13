@@ -1,3 +1,4 @@
-mod edit_page;
+mod components;
+mod view;
 
-pub use edit_page::EditPage;
+pub use view::EditPage;

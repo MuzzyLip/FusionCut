@@ -6,5 +6,7 @@ edition.workspace = true
 [dependencies]
 gpui = { workspace = true }
 gpui-component = { workspace = true }
+gpui_util = { workspace = true }
+anyhow = { workspace = true }
 
 fusion-cut-core = { workspace = true }

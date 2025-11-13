@@ -1801,6 +1801,7 @@ name = "fusion-cut-core"
 version = "0.1.0"
 dependencies = [
  "gpui",
+ "gpui-component",
  "locale_config",
  "toml 0.9.8",
 ]
@@ -1816,9 +1817,11 @@ dependencies = [
 name = "fusion-cut-ui"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "fusion-cut-core",
  "gpui",
  "gpui-component",
+ "gpui_util",
 ]
 
 [[package]]

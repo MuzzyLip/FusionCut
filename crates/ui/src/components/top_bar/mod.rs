@@ -1,4 +1,4 @@
 mod operation_bar;
-mod top_bar;
+mod top_view;
 
-pub use top_bar::TopBar;
+pub use top_view::TopBar;

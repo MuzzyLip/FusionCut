@@ -53,6 +53,7 @@ impl Render for OperationBar {
                 .children([
                     Button::new("minus")
                         .bg(BACKGROUND.to_rgba())
+                        .cursor_pointer()
                         .icon(
                             Icon::new(IconName::Minus)
                                 .text_color(TEXT_COLOR.to_rgba())
@@ -64,6 +65,7 @@ impl Render for OperationBar {
                         }),
                     Button::new("maximizes")
                         .bg(BACKGROUND.to_rgba())
+                        .cursor_pointer()
                         .icon(
                             Icon::new(IconName::WindowMaximize)
                                 .text_color(TEXT_COLOR.to_rgba())
@@ -75,6 +77,7 @@ impl Render for OperationBar {
                         }),
                     Button::new("close")
                         .bg(BACKGROUND.to_rgba())
+                        .cursor_pointer()
                         .icon(
                             Icon::new(IconName::Close)
                                 .text_color(TEXT_COLOR.to_rgba())
