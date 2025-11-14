@@ -1,6 +1,6 @@
 use fusion_cut_core::app_state::AppState;
 use gpui::{App, IntoElement, ParentElement, Render, Styled, div, rgb};
-use gpui_component::{StyledExt, Theme, ThemeRegistry};
+use gpui_component::{Root, StyledExt, Theme, ThemeRegistry};
 use std::path::PathBuf;
 
 use crate::{
@@ -33,6 +33,7 @@ impl Render for RootApp {
         window: &mut gpui::Window,
         cx: &mut gpui::Context<Self>,
     ) -> impl IntoElement {
+        let notification_layer = Root::render_notification_layer(window, cx);
         let global: &AppState = cx.global();
         let _i18n = global.i18n.clone();
         div()
@@ -40,8 +41,10 @@ impl Render for RootApp {
             .size_full()
             .justify_center()
             .items_center()
+            .overflow_hidden()
             .bg(rgb(BACKGROUND))
             .text_color(rgb(TEXT_COLOR))
             .child(EditPage::view(window, cx))
+            .children(notification_layer)
     }
 }

@@ -2,3 +2,5 @@
 "app.welcome" = "Hello"
 "upload" = "Upload"
 "choose-file" = "Please Choose a File"
+"video-ext-support" = "Only Supports video files"
+"get-ext-error" = "Failed to obtain file extension"

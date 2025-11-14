@@ -2,3 +2,5 @@
 "app.welcome" = "欢迎来到"
 "upload" = "上传"
 "choose-file" = "请选择文件"
+"video-ext-support" = "仅支持视频文件"
+"get-ext-error" = "获取文件后缀失败"

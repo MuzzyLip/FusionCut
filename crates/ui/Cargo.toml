@@ -7,6 +7,8 @@ edition.workspace = true
 gpui = { workspace = true }
 gpui-component = { workspace = true }
 gpui_util = { workspace = true }
+gpui-video-player = { workspace = true }
 anyhow = { workspace = true }
+url = "2.5.7"
 
 fusion-cut-core = { workspace = true }
