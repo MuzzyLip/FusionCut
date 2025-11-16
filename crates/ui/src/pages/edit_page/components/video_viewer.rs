@@ -38,7 +38,11 @@ impl Render for VideoViewer {
         div().relative().w_3_5().h_full().child(
             if let Some(video_path) = global.video_path.clone() {
                 let player = cx.new(|_| VideoPlayer::new(video_path));
-                div().size_full().child(player)
+                div()
+                    .size_full()
+                    .flex()
+                    .items_center()
+                    .justify_center().child(player)
             } else {
                 div().size_full().child(VideoViewerEmpty::view(window, cx))
             },
